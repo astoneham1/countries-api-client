@@ -22,6 +22,16 @@ public class CountryStats {
     public static void main(String[] args) {
         setUIFont(new FontUIResource(new Font("Tahoma", Font.PLAIN, 14)));
 
+        if (System.getProperty("os.name").toLowerCase().contains("mac")) {
+            try {
+                Image image = Toolkit.getDefaultToolkit().getImage("/Users/astoneham/Desktop/home/2025_CODE/country-api-client/image.png");
+                Taskbar.getTaskbar().setIconImage(image);
+                System.setProperty("apple.awt.application.name", "Country Stats");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
         // main frame
         JFrame frame = new JFrame("Country Statistics");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
